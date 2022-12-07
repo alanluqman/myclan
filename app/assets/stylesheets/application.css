@@ -38,8 +38,16 @@ body {
     gap: 0;
  }
 
+ .gap_1 {
+    gap: 1rem;
+ }
+
  .align_item_center {
   align-self: center;
+ }
+
+ .align_center {
+    align-items: center;
  }
 
  .text_center {
@@ -83,6 +91,14 @@ body {
     margin: auto;
  }
 
+ .underline {
+    text-decoration: underline;
+ }
+
+ .underline:hover {
+    color: #009973;
+ }
+
  .user_holder {
     background-color: #4083ff4b;
     padding: 1.5rem;
@@ -103,6 +119,11 @@ body {
   border-radius: 50%;
   outline: rgba(20, 24, 255, 0.288) solid 0.3rem;
   background: transparent;
+}
+
+.comment_pro_pic {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .btn {

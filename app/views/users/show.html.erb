@@ -18,7 +18,7 @@
        <p>Comments : <%= post.comment_counter%></p>
      </div>
    <% end %>
-   <%= link_to "All Posts", "/users/#{@user.id}/posts" , {:class => "btn heading_4 align_item_center"} %>
+   <%= link_to "All Posts", user_posts_path(user_id: @user.id) , {:class => "btn heading_4 align_item_center"} %>
  </div>
  <br>
  <% end %>

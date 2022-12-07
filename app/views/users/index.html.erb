@@ -1,10 +1,14 @@
-<div class = 'container'>
+<div class = 'container padding_1r'>
 <section class = 'd_flex_verical'>
   <h1 class = 'heading_1 primary_color text_center'>All users listed here</h1>
   <% @users.each do |user| %>
   <a href = "/users/<%= user.id %>">
     <div class = 'd_flex user_holder'>
+    <% if user.photo == '' %>
+      <img class = 'profile_pic' src = 'https://www.seekpng.com/png/full/428-4287240_no-avatar-user-circle-icon-png.png', alt = 'profile picture'>
+      <% else %>
       <img class = 'profile_pic' src = "<%= user.photo%>", alt = 'profile picture'>
+    <% end %>
       <div>
         <h1 class = 'heading_2 secondary_color'><%= user.name %></h1>
         <p class = 'heading_4 accent_color'>Number of posts : <%= user.post_counter %></p>

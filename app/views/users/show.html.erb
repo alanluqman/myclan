@@ -1,2 +1,25 @@
-<h1>User detail</h1>
-<h2> A details of specific user <%= @user.id %> shown here </h2>
+<div class = 'container padding_1r'>
+  <h1 class = 'heading_1 primary_color text_center'>User details</h1>
+  <%= render 'partials/user' %>
+  <div>
+    <h2 class = 'secondary_color'>Bio :</h2>
+    <p class = 'heading_4'><%= @user.bio %></p>
+  </div>
+  <hr class = 'hr-text heading_4' data-content = 'Recent posts' style = " width: 100% " >
+  <% if @user.three_recent_posts.length == 0 %>
+    <p class = 'heading_4'>No Post !</p>
+  <% else %>
+  <div class = 'd_flex_verical gap_0 padding_1r'>
+   <% @user.three_recent_posts.each do |post| %>
+     <h3 class = 'heading_3 secondary_color'><%= post.title %></h3>
+     <p class = 'heading_4'><%= post.text %></p>
+     <div class = 'd_flex accent_color'>
+       <p>Likes : <%= post.like_counter %></p>
+       <p>Comments : <%= post.comment_counter%></p>
+     </div>
+   <% end %>
+   <%= link_to "All Posts", "/users/#{@user.id}/posts" , {:class => "btn heading_4 align_item_center"} %>
+ </div>
+ <br>
+ <% end %>
+</div>

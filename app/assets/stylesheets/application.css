@@ -1,15 +1,93 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+:root {
+    --color-primary: rgb(76, 0, 148);
+    --color-secondary: rgb(151, 71, 226);
+    --color-accent: rgb(119, 119, 119);
+}
+
+html{
+    /*  62.5% of 16px = 10px */
+    font-size: 62.5%;
+    margin: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+ }
+
+ a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+ }
+
+ .d_flex {
+    display: flex;
+    gap: 3rem;
+ }
+
+ .d_flex_verical {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+ }
+
+ .text_center {
+    text-align: center;
+ }
+
+ .heading_1 {
+   font-size: 3rem;
+ }
+
+ .heading_2 {
+    font-size: 2.5rem;
+ }
+
+ .heading_3 {
+    font-size: 2rem;
+ }
+
+ .heading_4 {
+    font-size: 1.5rem;
+ }
+
+ .primary_color {
+    color: var(--color-primary);
+ }
+
+ .secondary_color {
+    color: var(--color-secondary);
+ }
+
+.accent_color {
+    color: var(--color-accent);
+ }
+ 
+ .container {
+    max-width: 90rem;
+    margin: auto;
+ }
+
+ .user_holder {
+    background-color: rgb(246, 241, 253);
+    padding: 1.5rem;
+    border-bottom-left-radius: 8rem;
+    border-top-left-radius: 8rem;
+    transition: all 0.3s ease;
+ }
+
+ .user_holder:hover {
+    background-color: rgb(238, 229, 250);
+ }
+ 
+
+ .profile_pic {
+  width: 13rem;
+  height: 13rem;
+  object-fit:cover;
+  border-radius: 50%;
+  outline: rgba(20, 24, 255, 0.288) solid 0.3rem;
+ }

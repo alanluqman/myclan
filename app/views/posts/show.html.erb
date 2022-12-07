@@ -1,2 +1,21 @@
-<h1>User Post detail</h1>
-<h2>A specific post <%= @post.id %> detail by specific user <%= @user.id %> shown here</h2>
+<div class = 'container padding_1r'>
+  <h1 class = 'heading_1 primary_color text_center'>User Post detail</h1>
+  <%= render 'partials/user'%>
+  <h2 class = 'heading_3 secondary_color'><%= @post.title %></h2>
+  <p class = 'heading_4'><%= @post.text %></p>
+  <div class = 'd_flex accent_color'>
+    <p>Likes : <%= @post.like_counter %></p>
+    <p>Comments : <%= @post.comment_counter%></p>
+  </div>
+  <% @post.comments.each do |comment| %>
+    <div class = 'd_flex gap_1 align_center' >
+    <% if comment.author.photo == '' %>
+      <img class = 'profile_pic comment_pro_pic' src = 'https://www.seekpng.com/png/full/428-4287240_no-avatar-user-circle-icon-png.png', alt = 'profile picture'>
+    <% else %>
+      <img class = 'profile_pic comment_pro_pic' src = "<%= comment.author.photo%>", alt = 'profile picture'>
+    <% end %>
+      <h3><%= comment.author.name%></h3>
+      <p><%= comment.text%></p>
+      </div>
+    <% end %>
+</div>

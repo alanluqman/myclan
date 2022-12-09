@@ -1,6 +1,7 @@
 :root {
     --color-primary: #4646b3;
     --color-secondary: #475ee2;
+    --color-green: #53bd53;
     --color-accent: #777777;
 }
 
@@ -42,9 +43,14 @@ body {
     gap: 1rem;
  }
 
+.justify_rigth {
+  justify-content: right;
+}
+
  .align_item_center {
   align-self: center;
  }
+
 
  .align_center {
     align-items: center;
@@ -132,6 +138,10 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   width: fit-content;
+}
+
+.green_btn {
+  background-color: var(--color-green);
 }
 
  .hr-text {

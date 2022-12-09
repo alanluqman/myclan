@@ -97,6 +97,13 @@ body {
     margin: auto;
  }
 
+ .m_auto {
+    margin: auto;
+ }
+
+ .h_padding_10 {
+    padding: 0.5rem 1rem;
+ }
  .underline {
     text-decoration: underline;
  }
@@ -138,10 +145,24 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   width: fit-content;
+  cursor: pointer;
+  border: 0;
 }
 
 .green_btn {
   background-color: var(--color-green);
+}
+
+.form_fild {
+  width: 60rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 0.5rem;
+  border: .1rem solid gray;
+  resize: none;
+}
+
+.form_fild:focus {
+  outline: .4rem solid rgba(100, 180, 255, 0.404);
 }
 
  .hr-text {

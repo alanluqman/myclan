@@ -6,6 +6,9 @@
     <p class = 'heading_4'><%= @user.bio %></p>
   </div>
   <hr class = 'hr-text heading_4' data-content = 'Recent posts' style = " width: 100% " >
+  <div class = 'd_flex justify_rigth'>  
+    <%= link_to 'New Post', new_user_post_path(user_id: @user.id), { :class => 'heading_4 btn green_btn' } %>
+  </div>
   <% if @user.three_recent_posts.length == 0 %>
     <p class = 'heading_4'>No Post !</p>
   <% else %>

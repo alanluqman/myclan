@@ -1,0 +1,6 @@
+<div>
+   <%= form_with model: @comment, local: true, url: user_post_comments_path(user_id: @user.id,post_id: @post.id), class: 'd_flex' do |f| %> 
+     <%= f.text_field :text, class: 'form_fild heading_4 h_padding_10' , placeholder: 'Comment...' , rows: 6, required: true  %>
+     <%= f.submit "Comment" , class: 'btn green_btn heading_4' %> 
+   <% end %> 
+</div>

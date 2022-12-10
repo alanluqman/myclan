@@ -7,7 +7,10 @@
     <p>Likes : <%= @post.like_counter %></p>
     <p>Comments : <%= @post.comment_counter%></p>
   </div>
+  <div class = 'd_flex align_center '>
   <%= render 'partials/comment'%><br>
+  <%= render 'partials/like'%><br>
+  </div>
   <hr class = 'hr-text heading_4' data-content = 'All Comments' style = " width: 100% " ><br>
   <% @post.comments.each do |comment| %>
     <div class = 'd_flex gap_1 align_center' >

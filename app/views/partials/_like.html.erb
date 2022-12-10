@@ -1,0 +1,5 @@
+<div>
+   <%= form_with model: @like, local: true, url: user_post_likes_path(user_id: @user.id,post_id: @post.id), class: 'd_flex' do |f| %> 
+     <%= f.submit "Like" , class: 'btn heading_4' %> 
+   <% end %> 
+</div>

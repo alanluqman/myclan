@@ -20,13 +20,13 @@ RSpec.describe 'User index page', type: :feature do
     end
 
     it ' -> I can see the number of posts each user has written.' do
-      expect(page).to have_content(@subject1.name)
-      expect(page).to have_content(@subject2.name)
+      expect(page).to have_content(@subject1.post_counter)
+      expect(page).to have_content(@subject2.post_counter)
     end
 
     it ' -> When I click on a user, I am redirected to that user show page.' do
       click_link(@subject1.name)
-      expect(page).to have_content(@subject1.name)
+      expect(current_path).to match user_path(@subject1)
     end
   end
 end

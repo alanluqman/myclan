@@ -10,7 +10,7 @@
        <p>Comments : <%= post.comment_counter%></p>
      </div>
      <% if post.comment_counter != 0 %>
-        <% post.comments.each do |comment| %>
+        <% post.five_recent_comments.each do |comment| %>
           <div class = 'd_flex gap_1 align_center' >
             <% if comment.author.photo == '' %>
               <img class = 'profile_pic comment_pro_pic' src = 'https://www.seekpng.com/png/full/428-4287240_no-avatar-user-circle-icon-png.png', alt = 'profile picture'>
@@ -24,4 +24,9 @@
      <% end %>
      <br>
    <% end %>
+  <div class="pagination heading_4 text_center">
+    <a href="#">Prev</a>
+    <a href="#">1</a>
+    <a href="#">Next</a>
+  </div>
 </div>

@@ -1,0 +1,17 @@
+<div class = 'd_flex justify_space_between padding_1r border_bottom'>
+  <div class = 'align_item_center'>
+      <% if user_signed_in? %>
+        <%= form_with  url: destroy_user_session_path, method: :delete, class: 'd_flex' do |f| %>
+          <%= f.submit "Logout" , class: 'btn heading_4' %>
+        <% end %>
+        <% else %>
+        <%= link_to 'Register', new_user_registration_path, class: 'btn heading_4' %>
+        <%= link_to 'Login', new_user_session_path, class: 'btn heading_4' %>
+      <% end %>
+  </div>
+  <div class = 'd_flex'>
+    <% if user_signed_in? %>
+     <%= link_to current_user.name,  edit_user_registration_path, class: 'align_item_center heading_4 secondary_color' %>
+     <% end %>
+  </div>
+</div>

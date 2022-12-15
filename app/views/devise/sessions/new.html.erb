@@ -1,0 +1,33 @@
+<div class = 'container'>
+<%= render 'partials/navigation'%>
+
+<h2 class = 'heading_1 primary_color text_center'>Log in</h2>
+
+<div class = 'form_holder m_auto'>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email, class: 'heading_4' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: 'form_fild auth_f_field' %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :password, class: 'heading_4' %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: 'form_fild auth_f_field' %>
+    </div>
+  
+    <% if devise_mapping.rememberable? %>
+      <div class="field d_flex">
+        <%= f.check_box :remember_me, class: 'heading_4' %>
+        <%= f.label :remember_me , class: 'heading_4' %>
+      </div>
+    <% end %>
+  
+    <div class="actions">
+      <%= f.submit "Log in" , class: ' btn green_btn heading_4' %>
+    </div>
+  <% end %>
+</div>
+
+<%# <%= render "devise/shared/links" %> 
+
+</div>

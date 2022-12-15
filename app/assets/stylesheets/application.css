@@ -47,6 +47,10 @@ body {
   justify-content: right;
 }
 
+.justify_space_between {
+   justify-content: space-between;
+} 
+
  .align_item_center {
   align-self: center;
  }
@@ -78,6 +82,10 @@ body {
 
  .heading_4 {
     font-size: 1.5rem;
+ }
+
+ .border_bottom {
+   border-bottom: 1px var(--color-secondary) solid;
  }
 
  .primary_color {
@@ -153,6 +161,21 @@ body {
   background-color: var(--color-green);
 }
 
+.red_btn {
+    background-color: #f82323;
+}
+
+.form_holder {
+   border: 1px var(--color-secondary) solid;
+   padding: 8rem 4rem;
+   width: fit-content;
+   border-radius: 1rem;
+}
+
+.field {
+   margin: 1.5rem 0;
+}
+
 .form_fild {
   width: 60rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -163,6 +186,11 @@ body {
 
 .form_fild:focus {
   outline: .4rem solid rgba(100, 180, 255, 0.404);
+}
+
+.auth_f_field {
+   padding: 0.5rem 1rem;
+   max-width: 30rem;
 }
 
  .hr-text {

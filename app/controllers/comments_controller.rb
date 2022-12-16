@@ -19,11 +19,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @user = @post.author
 
-    if @comment.destroy
-      @post.decrement!(:comment_counter)
-      redirect_to user_post_path(user_id: @user.id, id: @post.id)
-    end
+    return unless @comment.destroy
 
+    @post.decrement!(:comment_counter)
+    redirect_to user_post_path(user_id: @user.id, id: @post.id)
   end
 
   private

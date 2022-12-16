@@ -27,16 +27,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.includes(:comments, :likes).find(params[:id])
     @user = current_user
-    @post.comments.each do |comment|
-      comment.destroy
-    end
-    @post.likes.each do |like|
-      like.destroy
-    end
-    if @post.destroy
-      @post.author.decrement!(:post_counter)
-      redirect_to user_path(id: @user.id)
-    end
+    @post.comments.each(&:destroy)
+    @post.likes.each(&:destroy)
+    return unless @post.destroy
+
+    @post.author.decrement!(:post_counter)
+    redirect_to user_path(id: @user.id)
   end
 
   private

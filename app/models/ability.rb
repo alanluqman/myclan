@@ -1,16 +1,12 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     if user.role == 'admin'
       can :manage, [Post, Comment, Like]
     else
       can :manage, [Post, Comment, Like], author_id: user.id
     end
-
 
     # Define abilities for the user here. For example:
     #

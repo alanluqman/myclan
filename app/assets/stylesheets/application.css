@@ -2,6 +2,7 @@
     --color-primary: #4646b3;
     --color-secondary: #475ee2;
     --color-green: #53bd53;
+    --color-red: #f00;
     --color-accent: #777777;
 }
 
@@ -68,6 +69,10 @@ body {
     padding: 1rem;
  }
 
+ .padding_l_3rem {
+   padding-left: 3.5rem;
+ }
+
  .heading_1 {
    font-size: 3rem;
  }
@@ -98,6 +103,10 @@ body {
 
 .accent_color {
     color: var(--color-accent);
+ }
+
+ .red_color {
+   color: #f00;
  }
  
  .container {

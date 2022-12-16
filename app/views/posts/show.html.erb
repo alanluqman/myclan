@@ -4,9 +4,12 @@
   <%= render 'partials/user'%>
   <h2 class = 'heading_3 secondary_color'><%= @post.title %></h2>
   <p class = 'heading_4'><%= @post.text %></p>
-  <div class = 'd_flex accent_color'>
+  <div class = 'd_flex align_center accent_color'>
     <p>Likes : <%= @post.like_counter %></p>
     <p>Comments : <%= @post.comment_counter%></p>
+    <% if can? :destroy, @post %>
+      <%= link_to 'Delete Post', user_post_path(user_id: @user.id, id: @post.id), method: :delete , class: 'red_color' %>
+    <% end %>
   </div>
   <div class = 'd_flex align_center '>
   <%= render 'partials/comment'%><br>
@@ -20,8 +23,13 @@
     <% else %>
       <img class = 'profile_pic comment_pro_pic' src = "<%= comment.author.photo%>", alt = 'profile picture'>
     <% end %>
-      <h3><%= comment.author.name%></h3>
+      <h3 class = ''><%= comment.author.name%></h3>
       <p><%= comment.text%></p>
-      </div>
-    <% end %>
+    </div>
+    <div class = 'padding_l_3rem'>
+      <% if can? :manage, comment%>
+        <%= link_to 'Delete', user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete , class: 'red_color' %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

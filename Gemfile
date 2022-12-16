@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 gem 'bootsnap', require: false
+gem 'cancancan'
 gem 'devise'
 gem 'importmap-rails'
 gem 'jbuilder'
@@ -15,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+# Gem files for test and development
 group :development, :test do
   gem 'bullet'
   gem 'database_cleaner'
@@ -27,6 +29,7 @@ group :development do
   gem 'web-console'
 end
 
+# Test Gem files
 group :test do
   gem 'capybara'
   gem 'rails-controller-testing'

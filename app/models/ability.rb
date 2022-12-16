@@ -6,11 +6,9 @@ class Ability
   def initialize(user)
 
     if user.role == 'admin'
-      can :manage, all
+      can :manage, [Post, Comment, Like]
     else
-      can :manage, Post, author_id: user.id
-      can :manage, Comment, author_id: user.id
-      can :manage, Like, author_id: user.id
+      can :manage, [Post, Comment, Like], author_id: user.id
     end
 
 

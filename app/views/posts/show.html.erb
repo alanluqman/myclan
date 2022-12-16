@@ -8,7 +8,7 @@
     <p>Likes : <%= @post.like_counter %></p>
     <p>Comments : <%= @post.comment_counter%></p>
     <% if can? :destroy, @post %>
-      <%= link_to 'Delete Post', user_post_path(user_id: @user.id, id: @post.id), method: :delete , class: 'red_color' %>
+      <%= button_to 'Delete Post', user_post_path(user_id: @user.id, id: @post.id), method: :delete , class: 'delete_btn red_color' %>
     <% end %>
   </div>
   <div class = 'd_flex align_center '>
@@ -28,7 +28,7 @@
     </div>
     <div class = 'padding_l_3rem'>
       <% if can? :manage, comment%>
-        <%= link_to 'Delete', user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete , class: 'red_color' %>
+        <%= button_to 'Delete', user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete , class: 'delete_btn red_color' %>
       <% end %>
     </div>
   <% end %>

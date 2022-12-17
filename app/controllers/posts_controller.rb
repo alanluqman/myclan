@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.includes(:author, comments: [:author]).find(params[:id])
     @user = @post.author
-    # this is for api 
+    # this is for api
     respond_to do |format|
       format.html
       format.json do
@@ -19,7 +19,6 @@ class PostsController < ApplicationController
         end
       end
     end
-
   end
 
   def new

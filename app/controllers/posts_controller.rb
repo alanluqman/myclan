@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  # Actions
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: @user.id)
@@ -8,6 +7,16 @@ class PostsController < ApplicationController
   def show
     @post = Post.includes(:author, comments: [:author]).find(params[:id])
     @user = @post.author
+    respond_to do |format|
+      format.html
+      format.json do
+        if current_user.id == params[:user_id].to_i
+          render json: @post.comments
+        else
+          render html: "You are not authorized to see someone else's data"
+        end
+      end
+    end
   end
 
   def new

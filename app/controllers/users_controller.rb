@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # this is for api
     respond_to do |format|
       format.html
       format.json do

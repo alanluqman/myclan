@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  # Actions
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: @user.id)
@@ -8,7 +7,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.includes(:author, comments: [:author]).find(params[:id])
     @user = @post.author
-    # this is for api
     respond_to do |format|
       format.html
       format.json do

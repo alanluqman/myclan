@@ -1,4 +1,19 @@
 class CommentsController < ApplicationController
+
+  def index
+    @post = Post.find(params[:post_id])
+    respond_to do |format|
+      format.html
+      format.json do
+        if current_user.id == params[:user_id].to_i
+          render json: @post.comments
+        else
+          render html: "You are not authorized to see someone else's data"
+        end
+      end
+    end
+  end
+
   def new
     @comment = Comment.new
   end
